@@ -11,6 +11,7 @@ gunicorn = "*"
 dj-database-url = "*"
 "psycopg2" = "*"
 pillow = "*"
+sendgrid = "*"
 
 [dev-packages]
 pylint = "*"
