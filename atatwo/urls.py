@@ -33,14 +33,8 @@ urlpatterns = [
     path('', include('notifications.urls')),
     path('send_email/<str:producto>/', front_views.send_email, name='send_email'),
     path('risk/', compute_risk, name='compute_risk'),
-<<<<<<< HEAD
-    path('executive/', front_views.exectutive, name="executive"),
-    path('comprove/', front_views.comprove, name="comprove"),
-    path('result-positive/', front_views.result_positive, name="result-positive"),
-    path('result-negative/', front_views.result_negative, name="result-negative"),
-=======
     path('dashboard/', front_views.dashboard, name='dashbaord'),
->>>>>>> 1ad9d596050f4e5aaa2acb88b3afd5aa1bd3f10b
+    path('executive/', front_views.exectutive, name='executive'),
 ]
 
 if settings.DEBUG:
