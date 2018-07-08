@@ -13,3 +13,7 @@ def beneficios(request):
 
 def producto(request):
     return render(request, 'producto.html')
+
+
+def descuento_single(request):
+    return render(request, 'descuento_single.html')

@@ -25,6 +25,9 @@ from django.views.static import serve
 urlpatterns = [
     path('admin/', admin.site.urls),
     path('', front_views.index),
+    path('beneficios/', front_views.beneficios, name="beneficios"),
+    path('producto/', front_views.producto, name="producto"),
+    path('descuento/', front_views.descuento_single, name="descuento"),
     path('generate_qr/', qr_generate, name="generate_qr"),
     path('', include('notifications.urls')),
     
