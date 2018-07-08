@@ -27,13 +27,13 @@ def producto(request, producto):
     return render(request, 'producto.html')
 
 
-def display_qr(request, producto):
-
-    return render(request, '')
-
-
 def send_email(request, producto):
     user_rut = rut_transform(settings.USER_RUT)
     qr_name = "media/qr/" + user_rut + producto + ".png"
     email_generator(qr_name)
     return HttpResponse('Email enviado')
+
+
+
+def descuento_single(request):
+    return render(request, 'descuento_single.html')
