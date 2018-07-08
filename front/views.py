@@ -42,3 +42,8 @@ def send_email(request, producto):
 
 def descuento_single(request):
     return render(request, 'descuento_single.html')
+
+
+def dashboard(request):
+
+    return render(request, '')
