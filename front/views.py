@@ -4,4 +4,12 @@ from django.shortcuts import render
 
 def index(request):
     
-    return render(request, 'index.html')
+    return render(request, 'portal.html')
+
+
+def beneficios(request):
+    return render(request, 'descuentos.html')
+
+
+def producto(request):
+    return render(request, 'producto.html')
