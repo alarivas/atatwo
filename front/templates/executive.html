@@ -1,0 +1,171 @@
+<!DOCTYPE html>
+{% load static %}
+<html lang="es-CL" class="no-js">
+<!-- Head -->
+
+<head>
+    <title>Lector QR - BCI</title>
+
+    <!-- Meta -->
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <meta http-equiv="x-ua-compatible" content="ie=edge">
+    <meta name="keywords" content="Bootstrap Theme, Freebies, UI Kit, MIT license">
+    <meta name="description" content="Stream - Bootstrap 4 UI Kit">
+    <meta name="author" content="htmlstream.com">
+
+    <!-- Favicon -->
+    <link rel="shortcut icon" href="favicon.ico" type="image/x-icon">
+
+    <!-- Web Fonts -->
+    <link href="//fonts.googleapis.com/css?family=Playfair+Display:400,700%7COpen+Sans:300,400,700" rel="stylesheet">
+
+    <!-- Bootstrap Styles -->
+    <link rel="stylesheet" type="text/css" href="{% static 'executive/vendors/bootstrap/css/bootstrap.min.css' %}">
+
+    <!-- Theme Styles -->
+    <link rel="stylesheet" type="text/css" href="{% static 'executive/css/styles.css' %}">
+    <script type="text/javascript" src="{% static 'instascan.min.js' %}"></script>
+</head>
+<!-- End Head -->
+
+<body id="js-home" style="background: #f7f7f7;">
+    <!-- Header -->
+    <header role="header">
+        <!-- Navbar -->
+        <nav class="js-navbar-scroll navbar fixed-top navbar-expand-lg navbar-transparent navbar-dark" style="background: #fff;box-shadow: 2px 2px 2px 2px #f0f0f0;padding: 3px 27px;">
+            <div class="container-fluid">
+                <a class="navbar-brand" href="index.html">
+                    <img src="{% static 'executive/img/logo.png' %}" alt="" style="width: 160px;">
+                </a>
+
+                <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarTogglerDemo" aria-controls="navbarTogglerDemo" aria-expanded="false" aria-label="Toggle navigation">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+
+                <div class="collapse navbar-collapse" id="navbarTogglerDemo">
+                </div>
+            </div>
+        </nav>
+        <!-- End Navbar -->
+        <style>
+            .lector-qr {
+                padding: 2em 1em;
+                margin-top: 12em;
+            }
+            
+            .lector-qr h1 {
+                color: #000;
+                font-size: 1em;
+                margin-bottom: 25px;
+            }
+            
+            .mono-ql img {
+                position: absolute;
+                top: -210px;
+                width: 471px;
+                left: 304px;
+            }
+            
+            .scan-qr {
+                background: #fff;
+                display: block;
+                z-index: 2;
+                width: 330px;
+                margin: 0 auto;
+                border-radius: 3px;
+                position: relative;
+                padding: 5px;
+                box-shadow: 0px 1px 8px -2px #777777;
+            }
+            
+            .placeholder-qr {
+                width: 100%;
+            }
+            
+            .mono-ql {
+                position: relative;
+                width: 100%;
+                display: block;
+            }
+            
+            .mono-ql img {
+                position: absolute;
+                top: -215px;
+                width: 490px;
+                left: 293px;
+            }
+            
+            @media (max-width: 720px) {
+                .lector-qr {
+                    margin-top: 0;
+                }
+                .scan-qr {
+                    width: 230px;
+                }
+                .mono-ql img {
+                    top: -150px;
+                    width: 340px;
+                    left: 5px;
+                }
+            }
+        </style>
+
+        <!-- Promo Block -->
+        <section class="u-promo-block">
+            <!-- Promo Content -->
+            <div class="container text-white u-ver-center u-content-space">
+                <div class="row justify-content-center">
+                    <div class="col-12 text-center">
+                        <div class="lector-qr">
+
+                            <div class="mono-ql">
+                                <img src="{% static 'executive/img/mono-ql.png' %}">
+                            </div>
+                            <div class="scan-qr">
+                                <video style="width:60%" id="preview"></video>
+                                <script type="text/javascript">
+                                  let scanner = new Instascan.Scanner({ video: document.getElementById('preview') });
+                                  scanner.addListener('scan', function (content) {
+
+
+                                    window.location.replace("{% url 'comprove' %}" + "?encode="+content);
+                                    //alert(content);
+                                  });
+                                  Instascan.Camera.getCameras().then(function (cameras) {
+                                    if (cameras.length > 1) {
+                                      scanner.start(cameras[1]);
+                                      document.getElementById('preview').style.transform = "";
+                                    } else if(cameras.length > 0){
+                                      scanner.start(cameras[0]);
+
+                                    } else {
+                                      alert('No Camara');
+                                    }
+                                  }).catch(function (e) {
+                                    alert(e);
+                                  });
+                                </script>
+                            </div>
+                            <span style="color: #000;margin-top: 15px;display: block;">Escanear código qr</span>
+
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <!-- End Promo Content -->
+        </section>
+        <!-- End Promo Block -->
+    </header>
+    <!-- End Header -->
+
+    <!-- JAVASCRIPTS (Load javascripts at bottom, this will reduce page load time) -->
+    <!-- Global Vendor -->
+    <script src="{% static 'executive/vendors/jquery.min.js' %}"></script>
+    <script src="{% static 'executive/vendors/jquery.migrate.min.js' %}"></script>
+    <script src="{% static 'executive/vendors/bootstrap/js/bootstrap.min.js' %}"></script>
+
+</body>
+<!-- End Body -->
+
+</html>
