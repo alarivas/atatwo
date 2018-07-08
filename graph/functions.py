@@ -62,15 +62,18 @@ def add_relation_graph(request):
     if Relation.objects.filter(person_one__rut=settings.USER_RUT, person_two__rut=request.POST.get('rut')).exists():
         r = Relation.objects.filter(person_one__rut=settings.USER_RUT, person_two__rut=request.POST.get('rut'))[0]
         r.count += 1
-        r.benefits.add(Benefit.objects.filter(name=request.POST.get('benefit'))[0])
+        ben, created = Benefit.objects.get_or_create(name=request.POST.get('benefit'))
+        r.benefits.add(ben)
         r.save()
     elif Relation.objects.filter(person_one__rut=request.POST.get('rut'), person_two__rut=settings.USER_RUT).exists():
         r = Relation.objects.filter(person_one__rut=request.POST.get('rut'), person_two__rut=settings.USER_RUT)[0]
         r.count += 1
-        r.benefits.add(Benefit.objects.filter(name=request.POST.get('benefit'))[0])
+        ben, created = Benefit.objects.get_or_create(name=request.POST.get('benefit'))
+        r.benefits.add(ben)
         r.save()
     else:
         p1, created = Person.objects.get_or_create(name=settings.USER_NAME, rut=settings.USER_RUT)
         p2, created = Person.objects.get_or_create(name=request.POST.get('name'), rut=request.POST.get('rut'))
         r = Relation.objects.create(person_one=p1, person_two=p2)
-        r.benefits.add(Benefit.objects.filter(name=request.POST.get('benefit'))[0])
+        ben, created = Benefit.objects.get_or_create(name=request.POST.get('benefit'))
+        r.benefits.add(ben)
