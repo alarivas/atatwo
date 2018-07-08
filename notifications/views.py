@@ -13,7 +13,9 @@ def send_email(vto, vsubject, vcontent, vfrom):
     content = Content("text/html", vcontent)
     mail = Mail(from_email, subject, to_email, content)
     response = sg.client.mail.send.post(request_body=mail.get())
-
+    print(response.status_code)
+    print(response.body)
+    print(response.headers)
     return response
 
 
@@ -21,6 +23,6 @@ def send_qr(request):
     response = send_email('alanrivas@thedogcompany.cl',
                           'testing',
                           '<html><head></head><body>hola</body></html>',
-                          '<atatwo@atatwo.cl>')
-    print(response)
+                          'hola <atatwo@atatwo.cl>')
+
     return HttpResponse("Correo enviado")
