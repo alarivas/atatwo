@@ -24,3 +24,11 @@ def send_qr(request):
                           'hola <atatwo@atatwo.cl>')
 
     return HttpResponse("Correo enviado")
+
+
+def email_generator(qr_name):
+    response = send_email('alanrivas@thedogcompany.cl',
+                          'testing',
+                          '<html><head></head><body>hola <img src="http://atatwo.herokuapp.com/{}" heigth="200" width="200"></body>'
+                          '</html>'.format(qr_name),
+                          'hola <atatwo@atatwo.cl>')
