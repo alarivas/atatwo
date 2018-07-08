@@ -23,8 +23,10 @@ from django.views.static import serve
 
 urlpatterns = [
     path('admin/', admin.site.urls),
+    path('', front_views.index),
+    path('generate_qr/', front_views.index, name="generate_qr"),
     path('', include('notifications.urls')),
-    path('', front_views.index)
+    
 ]
 
 if settings.DEBUG:
