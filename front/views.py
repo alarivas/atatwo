@@ -14,11 +14,11 @@ def beneficios(request):
 
 
 def producto(request, producto):
-<<<<<<< HEAD
+
     print(producto)
-=======
+
     is_hidden = True
->>>>>>> a791563c064e62d92d0f6e2634348d26237d9f32
+
     if request.method == 'POST':
         user_benefit = request.POST.get("rut") #rut
         user_rut = rut_transform(settings.USER_RUT)
