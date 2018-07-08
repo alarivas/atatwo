@@ -10,7 +10,7 @@ class Person(models.Model):
 
 
 class Relation(models.Model):
-    count = models.IntegerField(default=0)
+    count = models.IntegerField(default=1)
     person_one = models.OneToOneField(Person, on_delete=models.CASCADE, related_name='person_one')
     person_two = models.OneToOneField(Person, on_delete=models.CASCADE, related_name='person_two')
 
