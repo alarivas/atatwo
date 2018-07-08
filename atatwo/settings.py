@@ -147,3 +147,6 @@ STATICFILES_DIRS = (
 #MEDIA
 MEDIA_ROOT = os.path.join(BASE_DIR, 'media')
 MEDIA_URL = '/media/'
+
+USER_RUT = '18808706-k'
+USER_NAME = 'Cele Alarcón'

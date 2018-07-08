@@ -4,62 +4,9 @@ import qrcode
 from django.shortcuts import HttpResponse
 from .models import Person, Relation
 from notifications.views import email_generator
+from graph.functions import *
+from django.conf import settings
 # Create your views here.
-
-
-def rut_transform(_rut):
-
-    rut = _rut[:-2]
-    if _rut[-1] == 'K' or _rut[-1] == 'k':
-        rut += '1'
-        rut += '0'
-    else:
-        rut += '0'
-        rut += _rut[-1]
-    return rut
-
-
-def rut_return(__rut):
-    _rut = str(__rut)
-    rut = _rut[:-2]
-    if _rut[-2] == '1':
-        rut += '-'
-        rut += 'k'
-    else:
-        rut += '-'
-        rut += _rut[-1]
-    return rut
-
-
-def encrypt(user_rut, benefit_rut, _benefit):
-    cipher = blowfish.Cipher(b"secret key")
-    b_user_rut = int(user_rut).to_bytes(8, byteorder='big')
-    txt_encrypt = b"".join(cipher.encrypt_ecb(b_user_rut))
-
-    b_benefit = bytes(_benefit, 'utf-8')
-    while len(b_benefit) % 8 != 0:
-        b_benefit += b"0"
-
-    #for rut in benefit_rut:
-    b_rut = int(benefit_rut).to_bytes(8, byteorder='big')
-    txt_encrypt += b"".join(cipher.encrypt_ecb(b_rut))
-    txt_encrypt += b"".join(cipher.encrypt_ecb(b_benefit))
-
-    return txt_encrypt.hex()
-
-
-def decrypt(txt_encrypt_hex):
-    cipher = blowfish.Cipher(b"secret key")
-    txt_encrypt = bytearray.fromhex(txt_encrypt_hex)
-
-    #e_ruts = [txt_encrypt[0+i:8+i] for i in range(0, len(txt_encrypt), 8)]
-    #ruts = list()
-    #for e_rut in e_ruts:
-    user_rut = int.from_bytes(b"".join(cipher.decrypt_ecb(txt_encrypt[:8])), byteorder='big')
-    benefit_rut = int.from_bytes(b"".join(cipher.decrypt_ecb(txt_encrypt[8:8*2])), byteorder='big')
-    benefit = (b"".join(cipher.decrypt_ecb(txt_encrypt[8*2:]))).decode('utf-8').replace("0", "")
-
-    return str(user_rut), str(benefit_rut), benefit
 
 
 def qr_generate(request):
@@ -67,20 +14,16 @@ def qr_generate(request):
         benefit = request.POST.get("benefit") #beneficio
         user_benefit = request.POST.get("rut") #rut
         user_name = request.POST.get("name")
-        user_rut = rut_transform('18808706-k')
+        user_rut = rut_transform(settings.USER_RUT)
         benefit_rut = rut_transform(user_benefit)
         to_qr = encrypt(user_rut, benefit_rut, benefit)
         qr = qrcode.make(to_qr)
         qr_name = "media/qr/" + user_rut + benefit + ".png"
         qr.save(qr_name)
-        add_relation_graph()
+        add_relation_graph(request)
         email_generator(qr_name)
         return HttpResponse('QR generado')
     return HttpResponse('QR no generado')
-
-
-def add_relation_graph():
-    pass
 
 
 def send_qr(request):
@@ -89,3 +32,16 @@ def send_qr(request):
 
 def email():
     pass
+
+
+def compute_risk(request):
+    p = Person.objects.all()[0]
+    friends = [(p.person_two, p.count) for p in p.person_one.all()] + [(p.person_one, p.count) for p in p.person_two.all()]
+    count = 0
+    for friend, weight in friends:
+        print(friend)
+        if friend.is_good_payer:
+            count += 1*weight
+        else:
+            count -= 1*weight
+    return HttpResponse(count)
