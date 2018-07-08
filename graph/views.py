@@ -1,6 +1,9 @@
 from django.shortcuts import render
 import blowfish
 import qrcode
+from django.shortcuts import HttpResponse
+from .models import Person, Relation
+from notifications.views import email_generator
 # Create your views here.
 
 
@@ -34,7 +37,7 @@ def encrypt(user_rut, benefit_rut, _benefit):
     txt_encrypt = b"".join(cipher.encrypt_ecb(b_user_rut))
 
     b_benefit = bytes(_benefit, 'utf-8')
-    while len(benefit_rut) % 8 != 0:
+    while len(b_benefit) % 8 != 0:
         b_benefit += b"0"
 
     #for rut in benefit_rut:
@@ -61,15 +64,23 @@ def decrypt(txt_encrypt_hex):
 
 def qr_generate(request):
     if request.method == 'POST':
-        benefit = request.POST.get("benefit")
-        user_benefit = request.POST.get("user_benefit")
-
+        benefit = request.POST.get("benefit") #beneficio
+        user_benefit = request.POST.get("rut") #rut
+        user_name = request.POST.get("name")
         user_rut = rut_transform('18808706-k')
         benefit_rut = rut_transform(user_benefit)
-
         to_qr = encrypt(user_rut, benefit_rut, benefit)
         qr = qrcode.make(to_qr)
-        qr.save("static/files/" + user_rut + benefit + ".png")
+        qr_name = "media/qr/" + user_rut + benefit + ".png"
+        qr.save(qr_name)
+        add_relation_graph()
+        email_generator(qr_name)
+        return HttpResponse('QR generado')
+    return HttpResponse('QR no generado')
+
+
+def add_relation_graph(request):
+    pass
 
 
 def send_qr(request):
