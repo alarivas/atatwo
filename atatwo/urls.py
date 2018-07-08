@@ -35,6 +35,7 @@ urlpatterns = [
     path('risk/', compute_risk, name='compute_risk'),
     path('dashboard/', front_views.dashboard, name='dashbaord'),
     path('executive/', front_views.exectutive, name='executive'),
+    path('comprove/', front_views.comprove, name='comprove'),
 ]
 
 if settings.DEBUG:
