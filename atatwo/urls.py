@@ -21,16 +21,18 @@ from graph.views import qr_generate
 from django.conf.urls import url, include
 from django.conf import settings
 from django.views.static import serve 
+from graph.views import compute_risk
 
 urlpatterns = [
     path('admin/', admin.site.urls),
     path('', front_views.index),
     path('beneficios/', front_views.beneficios, name="beneficios"),
-    path('producto/', front_views.producto, name="producto"),
+    path('producto/<str:producto>/', front_views.producto, name="producto"),
     path('descuento/', front_views.descuento_single, name="descuento"),
     path('generate_qr/', qr_generate, name="generate_qr"),
     path('', include('notifications.urls')),
-    
+    path('send_email/<str:producto>/', front_views.send_email, name='send_email'),
+    path('risk/', compute_risk, name='compute_risk'),
 ]
 
 if settings.DEBUG:

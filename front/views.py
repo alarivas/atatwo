@@ -34,6 +34,5 @@ def send_email(request, producto):
     return HttpResponse('Email enviado')
 
 
-
 def descuento_single(request):
     return render(request, 'descuento_single.html')

@@ -32,3 +32,16 @@ def send_qr(request):
 
 def email():
     pass
+
+
+def compute_risk(request):
+    p = Person.objects.all()[0]
+    friends = [(p.person_two, p.count) for p in p.person_one.all()] + [(p.person_one, p.count) for p in p.person_two.all()]
+    count = 0
+    for friend, weight in friends:
+        print(friend)
+        if friend.is_good_payer:
+            count += 1*weight
+        else:
+            count -= 1*weight
+    return HttpResponse(count)
