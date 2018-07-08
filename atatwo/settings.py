@@ -38,6 +38,7 @@ INSTALLED_APPS = [
     'django.contrib.messages',
     'django.contrib.staticfiles',
     'graph',
+    'front'
 ]
 
 MIDDLEWARE = [
@@ -55,7 +56,8 @@ ROOT_URLCONF = 'atatwo.urls'
 TEMPLATES = [
     {
         'BACKEND': 'django.template.backends.django.DjangoTemplates',
-        'DIRS': [os.path.join(BASE_DIR, 'templates')]
+        # 'DIRS': [os.path.join(BASE_DIR, 'templates')]
+        'DIRS': ['templates']
         ,
         'APP_DIRS': True,
         'OPTIONS': {
