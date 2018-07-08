@@ -79,7 +79,7 @@ def qr_generate(request):
     return HttpResponse('QR no generado')
 
 
-def add_relation_graph(request):
+def add_relation_graph():
     pass
 
 
