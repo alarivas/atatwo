@@ -1608,7 +1608,7 @@
               }
             </style>
 
-            <div class="map span4 {% if ishidden %} {% endif%}" id="invitar">
+            <div class="map span4 {% if is_hidden %} {% elif not is_hidden %} hidden {% endif%}" id="invitar">
                 <form action="" method="POST">
                 {% csrf_token %}
                 <div class="info-form">
@@ -1637,7 +1637,7 @@
              </form>
             </div>
 
-            <div class="map span4 {% if not ishidden %} hidden {% endif%}" id="cupon-qr">
+            <div class="map span4 {% if is_hidden %} hidden {% endif%}" id="cupon-qr">
                     <h2 style="text-align: center;font-size: 1.2rem;margin-top: 30px;font-weight: 600;">Presenta este cupón</h2>
                     <div class="form-qr">
                       <div class="top-bg">
@@ -1645,8 +1645,8 @@
                       </div>
                       <img class="img-logo-qr" src="{% static 'logo-qr.jpg' %}">
                       <h3>30% Descuento</h3>
-                      <img src="{% static 'qr.png' %}" class="img-qr">
-                      <span>Café Amelia</span>
+                      <img src="http://127.0.0.1:8000/{{qr_img}}" class="img-qr">
+                      <span>Amelia Café</span>
                       <img src="{% static 'bg-qr.png' %}" class="img-bg-qr">
                       <small>Descuento de un 30% en los precios de venta al público
 de sus productos y servicios. No acumulable con otras promociones y/o descuentos.</small>

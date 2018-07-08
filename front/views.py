@@ -29,6 +29,7 @@ def producto(request, producto):
         qr.save(qr_name)
         add_relation_graph(request)
         is_hidden = False
+        return render(request, 'producto.html', {'is_hidden': is_hidden,'qr_img': qr_name})
     return render(request, 'producto.html', {'is_hidden': is_hidden})
 
 
