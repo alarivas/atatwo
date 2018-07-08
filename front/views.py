@@ -2,7 +2,7 @@ from django.shortcuts import HttpResponse, render
 from graph.functions import *
 from django.conf import settings
 import qrcode
-from graph.functions import decrypt
+from graph.functions import decrypt, rut_return
 from notifications.views import email_generator
 
 
@@ -52,9 +52,8 @@ def exectutive(request):
 def comprove(request):
     try:
         user, u_benefit, benefit = decrypt(request.GET.get('encode'))
-        print(user)
-        print(u_benefit)
-        print(benefit)
+        user = rut_return(user)
+        u_benefit = rut_return(u_benefit)
         return render(request, 'result-positive.html', {'user': user, 'benefit_rut': u_benefit, 'benefit': benefit})
     except ValueError:
         return render(request, 'result-negative.html')
