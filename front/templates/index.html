@@ -1,21 +1,28 @@
 {% extends "base.html" %}
 
 {% block costumcss %}
-<style>
+<!-- <style>
     #mynetwork {
         width: 600px;
         height: 400px;
         border: 1px solid lightgray;
     }
-</style>
+</style> -->
 {% endblock costumcss %}
 
 {% block main %}
-<div id="mynetwork"></div>
+<form action="{% url 'generate_qr' %}" method="POST">
+    {% csrf_token %}
+    <h5>formulario rancio</h5>
+    <input type="text" name="name" placeholder="Nombre y apellido" id="nombre_apellido">
+    <input type="text" name="rut" id="rut">
+    <input type="hidden" name="benefit" value="cafeamelia" id="benefit">
+    <input type="submit" value="Generar cupón">
+</form>
 {% endblock main %}
 
 {% block costumjs %}
-<script type="text/javascript">
+<!-- <script type="text/javascript">
     // create an array with nodes
     var nodes = new vis.DataSet([
         {id: 1, label: 'Node 1'},
@@ -45,5 +52,5 @@
 
     // initialize your network!
     var network = new vis.Network(container, data, options);
-</script>
+</script> -->
 {% endblock costumjs %}
