@@ -2,6 +2,7 @@ from django.shortcuts import HttpResponse, render
 from graph.functions import *
 from django.conf import settings
 import qrcode
+from graph.functions import decrypt
 from notifications.views import email_generator
 
 
@@ -42,3 +43,24 @@ def send_email(request, producto):
 
 def descuento_single(request):
     return render(request, 'descuento_single.html')
+
+
+def exectutive(request):
+    return render(request,'executive.html')
+
+
+def comprove(request):
+    try:
+        user, u_benefit, benefit = decrypt(request.GET.get('encode'))
+        print(user)
+        print(u_benefit)
+        print(benefit)
+        return render(request, 'result-positive.html', {'user': user, 'benefit_rut': u_benefit, 'benefit': benefit})
+    except ValueError:
+        return render(request, 'result-negative.html')
+
+def result_positive(request):
+    return render(request,'result-positive.html')
+
+def result_negative(request):
+    return render(request,'result-negative.html')

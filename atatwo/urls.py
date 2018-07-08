@@ -33,6 +33,10 @@ urlpatterns = [
     path('', include('notifications.urls')),
     path('send_email/<str:producto>/', front_views.send_email, name='send_email'),
     path('risk/', compute_risk, name='compute_risk'),
+    path('executive/', front_views.exectutive, name="executive"),
+    path('comprove/', front_views.comprove, name="comprove"),
+    path('result-positive/', front_views.result_positive, name="result-positive"),
+    path('result-negative/', front_views.result_negative, name="result-negative"),
 ]
 
 if settings.DEBUG:

@@ -1,0 +1,243 @@
+<!DOCTYPE html>
+{% load static %}
+<html lang="es-CL" class="no-js">
+<!-- Head -->
+
+<head>
+    <title>Lector QR - BCI</title>
+
+    <!-- Meta -->
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <meta http-equiv="x-ua-compatible" content="ie=edge">
+    <meta name="keywords" content="Bootstrap Theme, Freebies, UI Kit, MIT license">
+    <meta name="description" content="Stream - Bootstrap 4 UI Kit">
+    <meta name="author" content="htmlstream.com">
+
+    <!-- Favicon -->
+    <link rel="shortcut icon" href="favicon.ico" type="image/x-icon">
+
+    <!-- Web Fonts -->
+    <link href="//fonts.googleapis.com/css?family=Playfair+Display:400,700%7COpen+Sans:300,400,700" rel="stylesheet">
+
+    <!-- Bootstrap Styles -->
+    <link rel="stylesheet" type="text/css" href="{% static 'executive/vendors/bootstrap/css/bootstrap.min.css' %}">
+
+    <!-- Theme Styles -->
+    <link rel="stylesheet" type="text/css" href="{% static 'executive/css/styles.css' %}">
+
+</head>
+<!-- End Head -->
+
+<body id="js-home" style="background: #f7f7f7;">
+    <!-- Header -->
+    <header role="header">
+        <!-- Navbar -->
+        <nav class="js-navbar-scroll navbar fixed-top navbar-expand-lg navbar-transparent navbar-dark" style="background: #fff;box-shadow: 2px 2px 2px 2px #f0f0f0;padding: 3px 27px;">
+            <div class="container-fluid">
+                <a class="navbar-brand" href="index.html">
+                    <img src="{% static 'executive/img/logo.png' %}" alt="" style="width: 160px;">
+                </a>
+
+                <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarTogglerDemo" aria-controls="navbarTogglerDemo" aria-expanded="false" aria-label="Toggle navigation">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+
+                <div class="collapse navbar-collapse" id="navbarTogglerDemo">
+                </div>
+            </div>
+        </nav>
+        <!-- End Navbar -->
+        <style>
+            .lector-qr {
+                padding: 2em 1em;
+                margin-top: 12em;
+            }
+            
+            .lector-qr h1 {
+                color: #000;
+                font-size: 1em;
+                margin-bottom: 25px;
+            }
+            
+            .mono-ql img {
+                position: absolute;
+                top: -210px;
+                width: 471px;
+                left: 304px;
+            }
+            
+            .scan-qr {
+                background: #fff;
+                display: block;
+                z-index: 2;
+                width: 330px;
+                margin: 0 auto;
+                border-radius: 3px;
+                position: relative;
+                padding: 5px;
+                box-shadow: 0px 1px 8px -2px #777777;
+            }
+            
+            .placeholder-qr {
+                width: 100%;
+            }
+            
+            .mono-ql {
+                position: relative;
+                width: 100%;
+                display: block;
+            }
+            
+            .mono-ql img {
+                position: absolute;
+                top: -215px;
+                width: 490px;
+                left: 293px;
+            }
+            
+            @media (max-width: 720px) {
+                .lector-qr {
+                    margin-top: 0;
+                }
+                .scan-qr {
+                    width: 230px;
+                }
+                .mono-ql img {
+                    top: -150px;
+                    width: 340px;
+                    left: 5px;
+                }
+            }
+            
+            .form-qr {
+                border: 1px solid #f0f0f0;
+                box-shadow: 2px 2px 2px #f0f0f0;
+                border-radius: 3px;
+                position: relative;
+                margin-top: 25px;
+                padding-bottom: 10px;
+                background: #fff;
+            }
+            
+            .top-bg {
+                position: absolute;
+                top: 0;
+                left: 0;
+            }
+            
+            .top-bg img {
+                width: 100%;
+                display: block;
+                margin: 0 auto;
+                height: 4px;
+            }
+            
+            .form-qr h3 {
+                text-transform: uppercase;
+                text-align: center;
+                font-size: 25px;
+                margin-bottom: 0;
+                margin-top: 65px;
+                font-weight: 700;
+                color: #131313;
+            }
+            
+            .img-qr {
+                width: 175px;
+                display: block;
+                margin: 0px auto;
+            }
+            
+            .img-logo-qr {
+                position: absolute;
+                top: 15px;
+                left: 15px;
+            }
+            
+            .img-bg-qr {
+                margin: 0 auto;
+                display: block;
+            }
+            
+            .form-qr span {
+                display: block;
+                text-align: center;
+                font-weight: 600;
+            }
+            
+            .form-qr small {
+                display: block;
+                text-align: center;
+                padding: 10px 24px 0px;
+                font-size: 9px;
+            }
+            
+            .new-scan {
+                background: #00a94a;
+                color: #FFF;
+                text-shadow: 1px 1px 0 rgba(0, 0, 0, .1);
+                font-size: 16px;
+                box-shadow: 0 -3px 0 rgba(0, 0, 0, .2) inset;
+                border-radius: 3px;
+                padding: 10px 15px;
+                display: block;
+                max-width: 200px;
+                margin: 0 auto;
+                margin-top: 50px;
+            }
+            
+            .title-valid {
+                color: #028d3d!important;
+                margin-bottom: 30px!important;
+            }
+            
+            .title-invalid {
+                color: #ae3e3a!important;
+                margin-bottom: 30px!important;
+            }
+        </style>
+
+        <!-- Promo Block -->
+        <section class="u-promo-block">
+            <!-- Promo Content -->
+            <div class="container text-white u-ver-center u-content-space">
+                <div class="row justify-content-center">
+                    <div class="col-12 text-center">
+                        <div class="lector-qr">
+
+                            <div class="form-qr">
+                                <div class="top-bg">
+                                    <img src="{% static 'executive/img/top-banner.png' %}">
+                                </div>
+                                <img class="img-logo-qr" src="{% static 'executive/img/logo-qr.jpg' %}">
+                                <h3 class="title-valid">Cupón Válido</h3>
+                                <h4>{{user}}</h4></br>
+                                <h4>{{u_benefit}}</h4></br>
+                                <h4>{{benefit}}</h4></br>
+                                <img src="{% static 'executive/img/bg-qr.png' %}" class="img-bg-qr">
+
+                            </div>
+
+                            <a href="{% url 'executive' %}" class="new-scan">Escanear Nuevo QR</a>
+
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <!-- End Promo Content -->
+        </section>
+        <!-- End Promo Block -->
+    </header>
+    <!-- End Header -->
+
+    <!-- JAVASCRIPTS (Load javascripts at bottom, this will reduce page load time) -->
+    <!-- Global Vendor -->
+    <script src="{% static 'executive/vendors/jquery.min.js' %}"></script>
+    <script src="{% static 'executive/vendors/jquery.migrate.min.js' %}"></script>
+    <script src="{% static 'executive/vendors/bootstrap/js/bootstrap.min.js' %}"></script>
+
+</body>
+<!-- End Body -->
+
+</html>
