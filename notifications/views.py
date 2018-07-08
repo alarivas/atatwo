@@ -19,7 +19,7 @@ def send_email(vto, vsubject, vcontent, vfrom):
 def send_qr(request):
     response = send_email('alanrivas@thedogcompany.cl',
                           'testing',
-                          '<html><head></head><body>hola <img src="../static/img/qr.png" width="200"></body>'
+                          '<html><head></head><body>hola <img src="http://atatwo.herokuapp.com/media/qr.png" heigth="200" width="200"></body>'
                           '</html>',
                           'hola <atatwo@atatwo.cl>')
 
