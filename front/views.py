@@ -14,6 +14,7 @@ def beneficios(request):
 
 
 def producto(request, producto):
+    print(producto)
     if request.method == 'POST':
         user_benefit = request.POST.get("rut") #rut
         user_rut = rut_transform(settings.USER_RUT)

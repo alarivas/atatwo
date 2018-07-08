@@ -1608,7 +1608,9 @@
               }
             </style>
 
-            <div class="map span4 hidden" id="invitar">
+            <div class="map span4 {% if ishidden %} {% endif%}" id="invitar">
+                <form action="" method="POST">
+                {% csrf_token %}
                 <div class="info-form">
                 <h2>¡<strong>Invita</strong> a alguien o <strong>regala</strong> este descuento!</h2>
                 <p>Disfruta un 30% de descuento para ti y la persona que tú quieras.</p>
@@ -1617,24 +1619,25 @@
                 <div class="control-group string required customer_name">
                     <label class="string required control-label" for="customer_name">* Nombre y Apellido</label>
                     <div class="controls">
-                        <input class="string required" id="" style="width: 100%;" maxlength="50" name="" placeholder="" required="required" size="50" type="text">
+                        <input class="string required" id="" style="width: 100%;" maxlength="50" name="name" placeholder="" required="required" size="50" type="text" >
                     </div>
+                    
                 </div>          
 
 
                 <div class="control-group string required customer_name">
                     <label class="string required control-label" for="customer_name">* RUT</label>
                     <div class="controls">
-                        <input class="string required" style="width: 100%;" id="" maxlength="50" name="" placeholder="" required="required" size="50" type="text">
+                        <input class="string required" style="width: 100%;" id="" maxlength="50" placeholder="" required="required" size="50" type="text" name="rut">
                     </div>
                 </div>    
-
-                <a href="coupon-qr.html" class="btn btn-large btn-primary-green btn-block">Generar Cupón</a>
+                <input type="hidden" value="Amelia Cafe" name="benefit">
+                <input type="submit" href="coupon-qr.html" class="btn btn-large btn-primary-green btn-block">Generar Cupón</input>
                 </div>
-
+             </form>
             </div>
 
-            <div class="map span4 " id="cupon-qr">
+            <div class="map span4 {% if not ishidden %} hidden {% endif%}" id="cupon-qr">
                     <h2 style="text-align: center;font-size: 1.2rem;margin-top: 30px;font-weight: 600;">Presenta este cupón</h2>
                     <div class="form-qr">
                       <div class="top-bg">
