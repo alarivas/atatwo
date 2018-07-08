@@ -1,569 +1,533 @@
 <!DOCTYPE html>
-<!--[if lt IE 7 ]> 
-<html class="no-js ie6" lang="en">
-   <![endif]-->
-   <!--[if IE 7 ]>    
-   <html class="no-js ie7" lang="en">
-      <![endif]-->
-      <!--[if IE 8 ]>    
-      <html class="no-js ie8" lang="en">
-         <![endif]-->
-         <!--[if (gte IE 9)|!(IE)]>
-         <!-->
-            <html class="no-js" lang="en">
-            <!--<![endif]-->
-         <!-- HTML header with browser directives -->
-         <!-- Mirrored from www.vivirconbeneficios.cl/portal by HTTrack Website Copier/3.x [XR&CO'2014], Sat, 07 Jul 2018 23:57:10 GMT -->
-         <!-- Added by HTTrack -->
-         <meta http-equiv="content-type" content="text/html;charset=utf-8" />
-         <!-- /Added by HTTrack -->
-         <head>
-            <meta charset="utf-8"/>
-            <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1"/>
-            <link rel="shortcut icon" href="https://bci.modyocdn.com/uploads/f7ee24df-25fb-45ba-874d-f47056bf7cd3/C16x16/favicon.ico">
-            <meta name="google-site-verification" content="576kRUrS3aeNHr1mKrEu0lvA1exKaSoXbtG1KhWkZd4" />
-            <meta http-equiv="content-type" content="text/html; charset=utf-8"/>
-            <meta name="author" content="Vivir Con Beneficios"/>
-            <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-            <title>Vivir con Beneficios - Banco Bci</title>
-            <meta name="description" content="Pagando con las Tarjetas de Crédito Bci, accede en forma inmediata a descuentos en más de 1000 comercios a lo largo de todo Chile, increíbles programas de fidelización, diversos destinos en Chile y el mundo, y espectaculares promociones propias de Bci."/>
-            <meta name="keywords" content="Bci, Banco Bci, banco de crédito e inversiones, descuentos bci, vivir con beneficios, descuentos, puntos bci, viajes, viajes bci, descuentos bci."/>
-            <meta property="og:title" content="Bci.cl - Vivir con Beneficios "/>
-            <meta property="og:type" content="website"/>
-            <meta property="og:url" content="https://www.bci.cl/vivirconbeneficios"/>
-            <meta property="og:image" content="https://bci.modyocdn.com/uploads/a6e5cf86-77ff-427a-aea6-98c35d9725a2/original/Banner-vivirconbeneficios-google.jpg"/>
-            <meta property="og:site_name" content="Bci.cl - Vivir con Beneficios "/>
-            <meta property="og:description" content="El programa Vivir con Beneficios te ofrece increíbles descuentos, paquetes de viajes y miles de productos en su catálogo de puntos ¡Sólo usando tus tarjetas Bci!"/>
-            <link href='https://fonts.googleapis.com/css?family=Open+Sans:300italic,400italic,600italic,700italic,800italic,400,300,600,700,800' rel='stylesheet' type='text/css'>
-            <script src="https://entel.modyocdn.com/uploads/1f39e1af-509e-4a2e-8484-493be4ac63fe/original/js_angular.js"></script>
-            <script src="https://entel.modyocdn.com/uploads/85f64f70-becc-45f2-bff0-2deae48eb3b1/original/sanitize.js"></script>
-            <script src="https://entel.modyocdn.com/uploads/7e726977-a501-411a-9cc7-50617d147c33/original/angular-locale_es-cl.js"></script>
-            <link href='assets/site/1.0.0/base-0c78e60e67e3661e4e6694162852363b.css' media='screen' rel='stylesheet' type='text/css' />
-            <link href='portal/stylesheets/site-f34f8c007352f67f120ba07fbea1d239fc0d029849365bdad996577767593166.css' media='screen' rel='stylesheet' type='text/css' />
-            <script src='assets/site/1.0.0/base-610f4a9af2d821cb270e83be6c427b6f.js' type='text/javascript'></script><script src='portal/javascript/site-f34f8c007352f67f120ba07fbea1d239fc0d029849365bdad996577767593166.js' type='text/javascript'></script>
-            <!-- SIDR  -->
-            <script src="https://d2p52n04yb9sso.cloudfront.net/uploads/0fc69c00c99211e4a3d7cf08b54727ee/original/sidr.js"></script>
-            <!-- END SIDR -->
-         </head>
-         <!-- IE-->
-         <script>
-            str = navigator.userAgent;      
-            console.log(navigator.userAgent); 
-            var ua = str.toLowerCase();
-            
-            if(str.indexOf("MSIE 7.0") >= 0 || str.indexOf("MSIE 8.0") >= 0 || (ua.indexOf("safari/index.html") !== -1 && ua.indexOf("windows") !== -1 && ua.indexOf("chrom") === -1))
-                {
-                //alert('Por favor actualiza tu navegador de internet');
-                $("#alerta-navegador").addClass("mostrar-alerta-navegador");
-                $("#userAgent2").addClass("alert-navegador-IE-nova");
-                window.location.replace("portal/actualizar-navegador.html");
+{% load static %}
+<html class="no-js" lang="en">
+<meta http-equiv="content-type" content="text/html;charset=utf-8" />
+<head>
+    <meta charset="utf-8"/>
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1"/>
+    <link rel="shortcut icon" href="https://bci.modyocdn.com/uploads/f7ee24df-25fb-45ba-874d-f47056bf7cd3/C16x16/favicon.ico">
+    <meta name="google-site-verification" content="576kRUrS3aeNHr1mKrEu0lvA1exKaSoXbtG1KhWkZd4" />
+    <meta http-equiv="content-type" content="text/html; charset=utf-8"/>
+    <meta name="author" content="Vivir Con Beneficios"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+    <title>Vivir con Beneficios - Banco Bci</title>
+    <meta name="description" content="Pagando con las Tarjetas de Crédito Bci, accede en forma inmediata a descuentos en más de 1000 comercios a lo largo de todo Chile, increíbles programas de fidelización, diversos destinos en Chile y el mundo, y espectaculares promociones propias de Bci."/>
+    <meta name="keywords" content="Bci, Banco Bci, banco de crédito e inversiones, descuentos bci, vivir con beneficios, descuentos, puntos bci, viajes, viajes bci, descuentos bci."/>
+    <meta property="og:title" content="Bci.cl - Vivir con Beneficios "/>
+    <meta property="og:type" content="website"/>
+    <meta property="og:url" content="https://www.bci.cl/vivirconbeneficios"/>
+    <meta property="og:image" content="https://bci.modyocdn.com/uploads/a6e5cf86-77ff-427a-aea6-98c35d9725a2/original/Banner-vivirconbeneficios-google.jpg"/>
+    <meta property="og:site_name" content="Bci.cl - Vivir con Beneficios "/>
+    <meta property="og:description" content="El programa Vivir con Beneficios te ofrece increíbles descuentos, paquetes de viajes y miles de productos en su catálogo de puntos ¡Sólo usando tus tarjetas Bci!"/>
+    <link href='https://fonts.googleapis.com/css?family=Open+Sans:300italic,400italic,600italic,700italic,800italic,400,300,600,700,800' rel='stylesheet' type='text/css'>
+    <script src="https://entel.modyocdn.com/uploads/1f39e1af-509e-4a2e-8484-493be4ac63fe/original/js_angular.js"></script>
+    <script src="https://entel.modyocdn.com/uploads/85f64f70-becc-45f2-bff0-2deae48eb3b1/original/sanitize.js"></script>
+    <script src="https://entel.modyocdn.com/uploads/7e726977-a501-411a-9cc7-50617d147c33/original/angular-locale_es-cl.js"></script>
+    <!-- STATIC FILES -->
+    <link href="{% static  'assets/site/1.0.0/base-0c78e60e67e3661e4e6694162852363b.css' %}" media='screen' rel='stylesheet' type='text/css' />
+    <link href="{% static 'portal/stylesheets/site-f34f8c007352f67f120ba07fbea1d239fc0d029849365bdad996577767593166.css' %}" media='screen' rel='stylesheet' type='text/css' />
+    <script src="{% static 'assets/site/1.0.0/base-610f4a9af2d821cb270e83be6c427b6f.js' %}" type='text/javascript'></script><script src='portal/javascript/site-f34f8c007352f67f120ba07fbea1d239fc0d029849365bdad996577767593166.js' type='text/javascript'></script>
+    
+    <script src="https://d2p52n04yb9sso.cloudfront.net/uploads/0fc69c00c99211e4a3d7cf08b54727ee/original/sidr.js"></script>
+</head>
+<script>
+str = navigator.userAgent;      
+console.log(navigator.userAgent); 
+var ua = str.toLowerCase();
+
+if(str.indexOf("MSIE 7.0") >= 0 || str.indexOf("MSIE 8.0") >= 0 || (ua.indexOf("safari/index.html") !== -1 && ua.indexOf("windows") !== -1 && ua.indexOf("chrom") === -1))
+    {
+    $("#alerta-navegador").addClass("mostrar-alerta-navegador");
+    $("#userAgent2").addClass("alert-navegador-IE-nova");
+    window.location.replace("portal/actualizar-navegador.html");
+    }
+
+$( document ).ready(function() {    
+    $(".cerrar-alerta").click(function(){
+    $("#alerta-navegador").removeClass("mostrar-alerta-navegador");
+    });
+});
+$(document).ready(function(){        
+$(window).resize(function(){
+if (($(window).width() > 768)) {
+    $.sidr('close', 'sidr');
+}
+});
+});
+</script>
+<style>
+#userAgent2 {display:none}
+#userAgent2.alert-navegador-IE-nova {
+display: block;
+margin-top: 10px;
+padding: 5px 15px;
+font-weight: bold;
+border-radius: 3px;
+background: #d32020;
+}
+</style>
+<body id="home" class="context-home context-home-show  ">
+<style>
+    /* TOP NAV */
+    #top-nav { text-align: right; background: #000; position: relative; z-index: 1000; }
+    #top-nav .container { padding: 8px 0 !important; }
+    #top-nav ul { list-style: none; margin: 0; padding: 0; }
+    #top-nav li { display: inline-block; margin-left: 0; font-size: 14px; margin-bottom: 0; vertical-align: middle; }
+    #top-nav a { color: #fff; text-decoration: none; padding: 5px; font-weight: 600; font-size: 12px; }
+    #top-nav ul li strong a { font-weight: 300; }
+    #top-nav a:hover { color: #A5A3A3; text-decoration: none; }
+    #top-nav .rest-menu img { /*height: 23px;*/ height: 14px; margin-right: 7px; }
+    a#right-menu { border: 2px solid rgba(255,255,255,0.5); border-radius: 4px; }
+    a#right-menu:hover { border: 2px solid rgba(255,255,255,0.8); }
+    #top-nav { text-align: right; background: #000; position: relative; z-index: 1000; }
+    #top-nav .container { padding: 8px 0; -webkit-transition: all .2 ease-in-out; -moz-transition: all .2 ease-in-out; -o-transition: all .2 ease-in-out; -ms-transition: all .2 ease-in-out; transition: all .2 ease-in-out; }
+    #top-nav ul { list-style: none; margin: 0; padding: 0; }
+    #top-nav li { display: inline-block; margin-left: 0; font-size: 14px; text-align: left; }
+    /*#top-nav a { color: #A5A3A3; text-decoration: none; padding: 5px 10px; font-weight: 600; font-size: 13px; }
+    #top-nav a:hover { color: #fff; text-decoration: none; }*/
+    #top-nav .rest-menu span.cuadros { background: url(https://bci.modyocdn.com/uploads/34f65514-6cf7-40fd-ada7-b855b3a6c9b0/original/menu-bancas.png) no-repeat; background-size: contain; height: 14px; margin-right: 6px; width: 14px; display: inline-block; vertical-align: middle; margin-top: -5px; }
+    #top-nav .rest-menu.cerrar span.cuadros { background: url(https://bci.modyocdn.com/uploads/8b092ef2-4604-4342-9df1-598b197c968c/original/icn-cerrar.png) no-repeat; background-size: contain; }
+    #search-wrap { position: relative; }
+    #search-wrap input[type="search"] { background: url("https://bci.modyocdn.com/uploads/b8070579-675a-457c-a03d-44fd416a554d/original/lupa_blanca.png") no-repeat scroll right 10px top 2px transparent; width: auto; text-indent: 0; cursor: text; color: #fff; box-shadow: none; background-color: rgba(0,0,0,1); outline: 0; border-radius: 33px; height: 15px; margin-bottom: 0; margin-top: 0; border: 1px solid rgba(255,255,255,.5); padding: 10px 0px 10px 15px; font-size: 13px; font-family: 'Open Sans', sans-serif; -webkit-font-smoothing: antialiased; text-rendering: optimizelegibility; font-weight: normal; }
+    #search-wrap input[type="search"]::-webkit-input-placeholder {
+    opacity: 1;
+    font-style:normal
+    }
+    #search-wrap input[type="search"]:-moz-placeholder { /* Firefox 18- */
+    opacity: 1;
+    font-style:normal
+    }
+    #menu { margin-left: 0; }
+    .menu-l { float: left; margin-top: 9px; }
+    .menu-l a { font-weight: 300 !important; padding: 5px !important; }
+    .menu-l a span { font-weight: bold; }
+    .menu-l strong { color: #f4f4f4; text-decoration: none; padding: 5px 10px 2px 10px; font-size: 12px; position: relative; }
+    .menu-l strong:after { content: ""; width: 0; height: 0; border-bottom: 6px solid rgba(255,255,255,1); border-left: 6px solid transparent; border-right: 6px solid transparent; position: absolute; bottom: -15px; left: 40%; }
+    @media (max-width: 1200px) {
+    .menu-l a { font-size: 11px !important; }
+    .menu-l strong { font-size: 11px; padding: 5px 3px 2px 10px; }
+    .menu-l strong:after { bottom: -15px; }
+    }
+    @media (max-width: 979px) {
+    .menu-l { display: none !important; }
+    }
+    @media (max-width: 768px) {
+    a#right-menu { display: block; margin-top: -9px; padding: 3px 10px; }
+    }
+    #top-nav.active { margin-left: 0px; width: 100%; -webkit-transition: all .2s ease-in-out; -moz-transition: all .2 ease-in-out; -o-transition: all .2 ease-in-out; -ms-transition: all .2 ease-in-out; transition: all .2 ease-in-out; }
+    #menu.active { margin-left: 400px; width: 100%; -webkit-transition: all .2s ease-in-out; -moz-transition: all .2 ease-in-out; -o-transition: all .2 ease-in-out; -ms-transition: all .2 ease-in-out; transition: all .2 ease-in-out; }
+    #top-nav #menu-panel h3 { color: #FFF; font-weight: 300; font-size: 29px; margin: 25px 25px 0 25px; }
+    #top-nav #menu-panel small { display: block; margin-bottom: 30px; font-size: 16px; color: #ccc; margin: 25px; margin-top: 0; }
+    @media (max-width: 768px) {
+    #top-nav a > span { display: none; }
+    #top-nav .search-menu { display: none; }
+    .sidr.left { width: 250px !important }
+    #menu-panel small { display: none; }
+    .sidr.left #menu-panel h3 { font-size: 21px; padding: 0 5px; margin-top: 10px !important; display: block; }
+    #menu-panel li img { margin-left: 0; }
+    .div-blue { border-left: 3px solid #007ebf }
+    .div-green { border-left: 3px solid #00a94b }
+    .div-red { border-left: 3px solid #f33d33 }
+    .div-yellow { border-left: 3px solid #fbed00 }
+    .div-black { border-left: 3px solid #000 }
+    #top-nav.active { /*margin-left: 250px !important;*/ width: 100%; -webkit-transition: all .2 ease-in-out; -moz-transition: all .2 ease-in-out; -o-transition: all .2 ease-in-out; -ms-transition: all .2 ease-in-out; transition: all .2 ease-in-out; }
+    .sidr ul li { line-height: 2.5 !important; padding-left: 10px; font-size: 14px; font-weight: 300; }
+    .sidr form { margin: 0 !important; }
+    #menu.active { margin-left: 250px !important; width: 100%; -webkit-transition: all .2 ease-in-out; -moz-transition: all .2 ease-in-out; -o-transition: all .2 ease-in-out; -ms-transition: all .2 ease-in-out; transition: all .2 ease-in-out; }
+    }
+    @media (max-width: 1200px) {
+    #top-nav ul li strong a .hidden-phone { display: none !important; }
+    }
+</style>
+<script type="text/javascript">
+    $(document).ready(function(){
+        $('#sidr').css("display","none");
+        
+        $.ajax({
+            url: "https://www.bci.cl/corporacion/posts.json?category=menu-corporativo&limit=1",
+            cache: true,
+            dataType: 'jsonp',
+            success: function(data){
+            var html = '';
+            $.each(data.posts, function(i, v){
+                html += '' + v.description + '';
+            });
+                $('#cont_menu-corporativo').html(html);
+                console.log("menu listo!");
+                //MENU BANCOS
+            $(".rest-menu").click(function(){
+                $(".rest-menu").toggleClass('cerrar');
+                $("#sidr-left").toggleClass('active');
+    
+                if ($("#sidr-left").hasClass( 'active' )) {
+                    $("#top-nav").addClass('active');
+                    $("#menu").addClass('active');
                 }
+                else {
+                    $("#top-nav").removeClass('active');
+                    $("#menu").removeClass('active');
+                    $("#sidr").removeClass('active');
+                }
+            });
+            $(".off-screen-nav-button").on("click",function(e) {
+                $(".rest-menu").removeClass('cerrar');
+            });
+            $("#close-right-menu").on("click",function(e) {
+                $(".rest-menu").removeClass('cerrar');
+                $("#sidr-left").removeClass('active');
+                $("#menu").removeClass('active');
+                $("#top-nav").removeClass('active');
+            });
+                    $('#right-menu').sidr({
+                name: 'sidr-left',
+                side: 'left'
+            });
+    
+            $(".sub-lvl").on("click", function(){
+                $(".sub-lvl").parent().removeClass("active");
+                $(this).parent().addClass("active");
+    
+            });
+            $("#close-right-menu").on("click",function(e) {
+                $.sidr('close','sidr-left');
+            });
+    
+            $("#close-right-menu").on("click",function(e) {
+                $.sidr('close','sidr');
+            });
+            $(".ppanel").click(function(){
+                var att = $(this).attr("href");
+                $(".nav-responsive").hide();
+                $(att).show();
+            });
+            $(".prod-panel h4 a").click(function(){
+                $(this).parent().parent().hide();
+                $(".nav-responsive").show();
+            });
+            $('#sidr').css("display","block")
+            },
+                error: function(){
+                $('#cont_menu-corporativo').html('Fracaso'); 
+                console.log("menu error!")
+            }
+        })   
+        });
+</script>
+<div id="cont_menu-corporativo"></div>
+<div id="top-nav">
+    <div class="container">
+        <ul style="height: 28px;">
+            <li class="rest-menu">
+            <a onclick="ga('send', 'event', 'Header','Click','MenuBci', 1, true);" id="right-menu" href="#right-menu" class=""><span class="cuadros"></span>Menú</a>
+            </li>
+            <li class="menu-l"><strong>Vivir con Beneficios</strong></li>
+            <li class="menu-l"><a onclick="ga('send', 'event', 'Header','Click','Descuentos', 1, true);" href="{% url 'beneficios' %}">Descuentos</a></li>
+            <li class="menu-l"><a onclick="ga('send', 'event', 'Header','Click','Programas', 1, true);" href="programas.html">Programas</a></li>
+            <li class="menu-l"><a onclick="ga('send', 'event', 'Header','Click','Viajes', 1, true);" href="viajes.html">Viajes</a></li>
+            <li class="menu-l"><a onclick="ga('send', 'event', 'Header','Click','Promociones', 1, true);" href="promociones.html">Promociones</a></li>
+            <li><strong><a onclick="ga('send', 'event', 'Header','Click','Canales Atencion', 1, true);" target="_blank" href="https://www.bci.cl/personas/canales-de-atencion"><i class="icobci-svg23"></i> <span class="hidden-phone">Canales de Atención</span></a></strong></li>
+            <li><strong><a onclick="ga('send', 'event', 'Header','Click','Sucursales', 1, true);" target="_blank" href="https://www.bci.cl/personas/sucursales"><i class="icobci-svg25"></i> <span class="hidden-phone">Sucursales</span></a></strong></li>
+            <li><strong><a onclick="ga('send', 'event', 'Header','Click','ServicioalCliente', 1, true);" target="_blank" href="https://www.bci.cl/personas/servicio-al-cliente"><i class="icobci-svg78"></i> <span class="hidden-phone">Servicio al Cliente</span></a></strong></li>
+        </ul>
+    </div>
+</div>
+<header>
+    <div class="container">
+        <h1>
+            <a href="portal.html" class="" title="" target=""><img src='https://bci.modyocdn.com/uploads/a7c56c1b-ef08-47a3-ac6d-dc960b5a12ce/R360x50/logo.png'></a>
+        </h1>
+    </div>
+</header>
+<script>
+    var app = angular.module('beneficios', ['ngSanitize']);
+        app.config(function($interpolateProvider) {
+            $interpolateProvider.startSymbol('{/{');
+            $interpolateProvider.endSymbol('}/}');
+        });
+        
+        app.directive('replace', function($timeout) {
+            return {
+                restrict: 'A',
+                link: function(scope, element, attrs) {
+                    $timeout(function () {
+                    $('small.textoReplace').text(
+                        function(i, text){
+                            return text.replace('-', ' ');
+                    });
+                    $('small.textoReplace2').text(
+                        function(i, text){
+                            return text.replace('Shopping/index.html', '');
+                    });
+                    }, 0);
+                }
+            }
+        });
+        
+        app.controller('beneficiosCtrl', function($scope, $http) {
             
-            $( document ).ready(function() {    
-                $(".cerrar-alerta").click(function(){
-                $("#alerta-navegador").removeClass("mostrar-alerta-navegador");
+        $http.jsonp('viajes/products8274.json?tags=vivirconbeneficios&amp;limit=4&amp;callback=JSON_CALLBACK' ).
+        success(function (data) {
+            $scope.viajes = data.products;
+            $scope.viajes_vcb = [];
+            
+            angular.forEach($scope.viajes, function(value, key) {
+                $scope.viajes_vcb.push(value);
+            });
+            
+        });
+        
+        $http.jsonp('descuentos/promotions8274.json?tags=vivirconbeneficios&amp;limit=4&amp;callback=JSON_CALLBACK' ).
+        success(function (data) {
+            $scope.descuentos = data.promotions
+            $scope.descuentos_vcb = [];
+            
+            angular.forEach($scope.descuentos, function(value, key) {
+                $scope.descuentos_vcb.push(value);
+            });
+                        
+        });
+        
+        $http.jsonp('puntos/products8274.json?tags=vivirconbeneficios&amp;limit=4&amp;callback=JSON_CALLBACK' ).
+        success(function (data) {
+            $scope.puntos = data.products
+            $scope.puntos_vcb = [];
+                angular.forEach($scope.puntos, function(value, key) {
+                    $scope.puntos_vcb.push(value);
                 });
-            });
-            $(document).ready(function(){        
-            $(window).resize(function(){
-            if (($(window).width() > 768)) {
-                $.sidr('close', 'sidr');
-            }
-            });
-            });
-         </script>
-         <style>
-            #userAgent2 {display:none}
-            #userAgent2.alert-navegador-IE-nova {
-            display: block;
-            margin-top: 10px;
-            padding: 5px 15px;
-            font-weight: bold;
-            border-radius: 3px;
-            background: #d32020;
-            }
-         </style>
-         <!-- IE-->
-         <body id="home" class="context-home context-home-show  ">
-            <!-- Body with automatic context classes -->
-            <!--top-nav-->
-            <style>
-               /* TOP NAV */
-               #top-nav { text-align: right; background: #000; position: relative; z-index: 1000; }
-               #top-nav .container { padding: 8px 0 !important; }
-               #top-nav ul { list-style: none; margin: 0; padding: 0; }
-               #top-nav li { display: inline-block; margin-left: 0; font-size: 14px; margin-bottom: 0; vertical-align: middle; }
-               #top-nav a { color: #fff; text-decoration: none; padding: 5px; font-weight: 600; font-size: 12px; }
-               #top-nav ul li strong a { font-weight: 300; }
-               #top-nav a:hover { color: #A5A3A3; text-decoration: none; }
-               #top-nav .rest-menu img { /*height: 23px;*/ height: 14px; margin-right: 7px; }
-               a#right-menu { border: 2px solid rgba(255,255,255,0.5); border-radius: 4px; }
-               a#right-menu:hover { border: 2px solid rgba(255,255,255,0.8); }
-               #top-nav { text-align: right; background: #000; position: relative; z-index: 1000; }
-               #top-nav .container { padding: 8px 0; -webkit-transition: all .2 ease-in-out; -moz-transition: all .2 ease-in-out; -o-transition: all .2 ease-in-out; -ms-transition: all .2 ease-in-out; transition: all .2 ease-in-out; }
-               #top-nav ul { list-style: none; margin: 0; padding: 0; }
-               #top-nav li { display: inline-block; margin-left: 0; font-size: 14px; text-align: left; }
-               /*#top-nav a { color: #A5A3A3; text-decoration: none; padding: 5px 10px; font-weight: 600; font-size: 13px; }
-               #top-nav a:hover { color: #fff; text-decoration: none; }*/
-               #top-nav .rest-menu span.cuadros { background: url(https://bci.modyocdn.com/uploads/34f65514-6cf7-40fd-ada7-b855b3a6c9b0/original/menu-bancas.png) no-repeat; background-size: contain; height: 14px; margin-right: 6px; width: 14px; display: inline-block; vertical-align: middle; margin-top: -5px; }
-               #top-nav .rest-menu.cerrar span.cuadros { background: url(https://bci.modyocdn.com/uploads/8b092ef2-4604-4342-9df1-598b197c968c/original/icn-cerrar.png) no-repeat; background-size: contain; }
-               #search-wrap { position: relative; }
-               #search-wrap input[type="search"] { background: url("https://bci.modyocdn.com/uploads/b8070579-675a-457c-a03d-44fd416a554d/original/lupa_blanca.png") no-repeat scroll right 10px top 2px transparent; width: auto; text-indent: 0; cursor: text; color: #fff; box-shadow: none; background-color: rgba(0,0,0,1); outline: 0; border-radius: 33px; height: 15px; margin-bottom: 0; margin-top: 0; border: 1px solid rgba(255,255,255,.5); padding: 10px 0px 10px 15px; font-size: 13px; font-family: 'Open Sans', sans-serif; -webkit-font-smoothing: antialiased; text-rendering: optimizelegibility; font-weight: normal; }
-               #search-wrap input[type="search"]::-webkit-input-placeholder {
-               opacity: 1;
-               font-style:normal
-               }
-               #search-wrap input[type="search"]:-moz-placeholder { /* Firefox 18- */
-               opacity: 1;
-               font-style:normal
-               }
-               #menu { margin-left: 0; }
-               .menu-l { float: left; margin-top: 9px; }
-               .menu-l a { font-weight: 300 !important; padding: 5px !important; }
-               .menu-l a span { font-weight: bold; }
-               .menu-l strong { color: #f4f4f4; text-decoration: none; padding: 5px 10px 2px 10px; font-size: 12px; position: relative; }
-               .menu-l strong:after { content: ""; width: 0; height: 0; border-bottom: 6px solid rgba(255,255,255,1); border-left: 6px solid transparent; border-right: 6px solid transparent; position: absolute; bottom: -15px; left: 40%; }
-               @media (max-width: 1200px) {
-               .menu-l a { font-size: 11px !important; }
-               .menu-l strong { font-size: 11px; padding: 5px 3px 2px 10px; }
-               .menu-l strong:after { bottom: -15px; }
-               }
-               @media (max-width: 979px) {
-               .menu-l { display: none !important; }
-               }
-               @media (max-width: 768px) {
-               a#right-menu { display: block; margin-top: -9px; padding: 3px 10px; }
-               }
-               #top-nav.active { margin-left: 0px; width: 100%; -webkit-transition: all .2s ease-in-out; -moz-transition: all .2 ease-in-out; -o-transition: all .2 ease-in-out; -ms-transition: all .2 ease-in-out; transition: all .2 ease-in-out; }
-               #menu.active { margin-left: 400px; width: 100%; -webkit-transition: all .2s ease-in-out; -moz-transition: all .2 ease-in-out; -o-transition: all .2 ease-in-out; -ms-transition: all .2 ease-in-out; transition: all .2 ease-in-out; }
-               #top-nav #menu-panel h3 { color: #FFF; font-weight: 300; font-size: 29px; margin: 25px 25px 0 25px; }
-               #top-nav #menu-panel small { display: block; margin-bottom: 30px; font-size: 16px; color: #ccc; margin: 25px; margin-top: 0; }
-               @media (max-width: 768px) {
-               #top-nav a > span { display: none; }
-               #top-nav .search-menu { display: none; }
-               .sidr.left { width: 250px !important }
-               #menu-panel small { display: none; }
-               .sidr.left #menu-panel h3 { font-size: 21px; padding: 0 5px; margin-top: 10px !important; display: block; }
-               #menu-panel li img { margin-left: 0; }
-               .div-blue { border-left: 3px solid #007ebf }
-               .div-green { border-left: 3px solid #00a94b }
-               .div-red { border-left: 3px solid #f33d33 }
-               .div-yellow { border-left: 3px solid #fbed00 }
-               .div-black { border-left: 3px solid #000 }
-               #top-nav.active { /*margin-left: 250px !important;*/ width: 100%; -webkit-transition: all .2 ease-in-out; -moz-transition: all .2 ease-in-out; -o-transition: all .2 ease-in-out; -ms-transition: all .2 ease-in-out; transition: all .2 ease-in-out; }
-               .sidr ul li { line-height: 2.5 !important; padding-left: 10px; font-size: 14px; font-weight: 300; }
-               .sidr form { margin: 0 !important; }
-               #menu.active { margin-left: 250px !important; width: 100%; -webkit-transition: all .2 ease-in-out; -moz-transition: all .2 ease-in-out; -o-transition: all .2 ease-in-out; -ms-transition: all .2 ease-in-out; transition: all .2 ease-in-out; }
-               }
-               @media (max-width: 1200px) {
-               #top-nav ul li strong a .hidden-phone { display: none !important; }
-               }
-            </style>
-            <script type="text/javascript">
-               $(document).ready(function(){
-                   $('#sidr').css("display","none");
-                   
-                   $.ajax({
-                       url: "https://www.bci.cl/corporacion/posts.json?category=menu-corporativo&limit=1",
-                       cache: true,
-                       dataType: 'jsonp',
-                       success: function(data){
-                       var html = '';
-                       $.each(data.posts, function(i, v){
-                           html += '' + v.description + '';
-                       });
-                           $('#cont_menu-corporativo').html(html);
-                           console.log("menu listo!");
-                           //MENU BANCOS
-                       $(".rest-menu").click(function(){
-                           $(".rest-menu").toggleClass('cerrar');
-                           $("#sidr-left").toggleClass('active');
-               
-                           if ($("#sidr-left").hasClass( 'active' )) {
-                               $("#top-nav").addClass('active');
-                               $("#menu").addClass('active');
-                           }
-                           else {
-                               $("#top-nav").removeClass('active');
-                               $("#menu").removeClass('active');
-                               $("#sidr").removeClass('active');
-                           }
-                       });
-                       $(".off-screen-nav-button").on("click",function(e) {
-                           $(".rest-menu").removeClass('cerrar');
-                       });
-                       $("#close-right-menu").on("click",function(e) {
-                           $(".rest-menu").removeClass('cerrar');
-                           $("#sidr-left").removeClass('active');
-                           $("#menu").removeClass('active');
-                           $("#top-nav").removeClass('active');
-                       });
-                               $('#right-menu').sidr({
-                           name: 'sidr-left',
-                           side: 'left'
-                       });
-               
-                       $(".sub-lvl").on("click", function(){
-                           $(".sub-lvl").parent().removeClass("active");
-                           $(this).parent().addClass("active");
-               
-                       });
-                       $("#close-right-menu").on("click",function(e) {
-                           $.sidr('close','sidr-left');
-                       });
-               
-                       $("#close-right-menu").on("click",function(e) {
-                           $.sidr('close','sidr');
-                       });
-                       $(".ppanel").click(function(){
-                           var att = $(this).attr("href");
-                           $(".nav-responsive").hide();
-                           $(att).show();
-                       });
-                       $(".prod-panel h4 a").click(function(){
-                           $(this).parent().parent().hide();
-                           $(".nav-responsive").show();
-                       });
-                       $('#sidr').css("display","block")
-                       },
-                           error: function(){
-                           $('#cont_menu-corporativo').html('Fracaso'); 
-                           console.log("menu error!")
-                       }
-                   })   
-                   });
-            </script>
-            <div id="cont_menu-corporativo"></div>
-            <div id="top-nav">
-               <div class="container">
-                  <ul style="height: 28px;">
-                     <li class="rest-menu">
-                        <a onclick="ga('send', 'event', 'Header','Click','MenuBci', 1, true);" id="right-menu" href="#right-menu" class=""><span class="cuadros"></span>Menú</a>
-                     </li>
-                     <li class="menu-l"><strong>Vivir con Beneficios</strong></li>
-                     <li class="menu-l"><a onclick="ga('send', 'event', 'Header','Click','Descuentos', 1, true);" href="descuentos.html">Descuentos</a></li>
-                     <li class="menu-l"><a onclick="ga('send', 'event', 'Header','Click','Programas', 1, true);" href="programas.html">Programas</a></li>
-                     <li class="menu-l"><a onclick="ga('send', 'event', 'Header','Click','Viajes', 1, true);" href="viajes.html">Viajes</a></li>
-                     <li class="menu-l"><a onclick="ga('send', 'event', 'Header','Click','Promociones', 1, true);" href="promociones.html">Promociones</a></li>
-                     <li><strong><a onclick="ga('send', 'event', 'Header','Click','Canales Atencion', 1, true);" target="_blank" href="https://www.bci.cl/personas/canales-de-atencion"><i class="icobci-svg23"></i> <span class="hidden-phone">Canales de Atención</span></a></strong></li>
-                     <li><strong><a onclick="ga('send', 'event', 'Header','Click','Sucursales', 1, true);" target="_blank" href="https://www.bci.cl/personas/sucursales"><i class="icobci-svg25"></i> <span class="hidden-phone">Sucursales</span></a></strong></li>
-                     <li><strong><a onclick="ga('send', 'event', 'Header','Click','ServicioalCliente', 1, true);" target="_blank" href="https://www.bci.cl/personas/servicio-al-cliente"><i class="icobci-svg78"></i> <span class="hidden-phone">Servicio al Cliente</span></a></strong></li>
-                  </ul>
-               </div>
-            </div>
-            <header>
-               <div class="container">
-                  <h1>
-                     <a href="portal.html" class="" title="" target=""><img src='https://bci.modyocdn.com/uploads/a7c56c1b-ef08-47a3-ac6d-dc960b5a12ce/R360x50/logo.png'></a>
-                  </h1>
-               </div>
-            </header>
-            <script>
-               var app = angular.module('beneficios', ['ngSanitize']);
-               
-               
-                   // Cambiar la sintaxis de  a {/{ }/}
-                   app.config(function($interpolateProvider) {
-                       $interpolateProvider.startSymbol('{/{');
-                       $interpolateProvider.endSymbol('}/}');
-                   });
-                   
-                   app.directive('replace', function($timeout) {
-                       return {
-                           restrict: 'A',
-                           link: function(scope, element, attrs) {
-                             $timeout(function () {
-                               $('small.textoReplace').text(
-                                   function(i, text){
-                                       return text.replace('-', ' ');
-                               });
-                               $('small.textoReplace2').text(
-                                   function(i, text){
-                                       return text.replace('Shopping/index.html', '');
-                               });
-                             }, 0);
-                           }
-                       }
-                   });
-                   
-                   app.controller('beneficiosCtrl', function($scope, $http) {
-                       
-                   $http.jsonp('viajes/products8274.json?tags=vivirconbeneficios&amp;limit=4&amp;callback=JSON_CALLBACK' ).
-                   success(function (data) {
-                       $scope.viajes = data.products;
-                       $scope.viajes_vcb = [];
-                       
-                       angular.forEach($scope.viajes, function(value, key) {
-                           $scope.viajes_vcb.push(value);
-                       });
-                       
-                   });
-                   
-                   $http.jsonp('descuentos/promotions8274.json?tags=vivirconbeneficios&amp;limit=4&amp;callback=JSON_CALLBACK' ).
-                   success(function (data) {
-                       $scope.descuentos = data.promotions
-                       $scope.descuentos_vcb = [];
-                       
-                       angular.forEach($scope.descuentos, function(value, key) {
-                           $scope.descuentos_vcb.push(value);
-                       });
-                                   
-                   });
-                   
-                   $http.jsonp('puntos/products8274.json?tags=vivirconbeneficios&amp;limit=4&amp;callback=JSON_CALLBACK' ).
-                   success(function (data) {
-                       $scope.puntos = data.products
-                       $scope.puntos_vcb = [];
-                           angular.forEach($scope.puntos, function(value, key) {
-                               $scope.puntos_vcb.push(value);
-                           });
-                   
-                   });
-                   
-                   $http.jsonp('promociones/posts54e7.json?tags=&amp;limit=4&amp;callback=JSON_CALLBACK' ).
-                   success(function (data) {
-                       $scope.promos = data.posts
-                       $scope.promos_vcb = [];
-                           angular.forEach($scope.promos, function(value, key) {
-                               $scope.promos_vcb.push(value);
-                           });
-                   
-                   });
-               
-               })
-               app.filter('capitalize', function() {
-                   return function(input) {
-                     return (!!input) ? input.charAt(0).toUpperCase() + input.substr(1).toLowerCase() : '';
-                   }
-               });
-               
-               
-            </script>
-            <div id="content" ng-app="beneficios" ng-controller="beneficiosCtrl">
-               <div class="content-inner">
-                  <div id="featured-home">
-                     <div class="container">
+        
+        });
+        
+        $http.jsonp('promociones/posts54e7.json?tags=&amp;limit=4&amp;callback=JSON_CALLBACK' ).
+        success(function (data) {
+            $scope.promos = data.posts
+            $scope.promos_vcb = [];
+                angular.forEach($scope.promos, function(value, key) {
+                    $scope.promos_vcb.push(value);
+                });
+        
+        });
+    
+    })
+    app.filter('capitalize', function() {
+        return function(input) {
+            return (!!input) ? input.charAt(0).toUpperCase() + input.substr(1).toLowerCase() : '';
+        }
+    });
+    
+    
+</script>
+<div id="content" ng-app="beneficios" ng-controller="beneficiosCtrl">
+    <div class="content-inner">
+        <div id="featured-home">
+            <div class="container">
+            <div class="row-fluid">
+                <div class="span4">
+                    <img class="monos-home" src="https://bci.modyocdn.com/uploads/21eaba7c-aed3-4695-ac42-f4fd7e456bc6/original/monos-cover.png">
+                </div>
+                <div class="span8">
+                    <div class="caption">
+                        <h2 class="hidde-tablet">Vivir con Beneficios</h2>
+                        <p>Pagando con las Tarjetas de Crédito Bci, accede en forma inmediata a descuentos en más de 1000 comercios a lo largo de todo Chile, increíbles programas de fidelización, diversos destinos en Chile y el mundo, y espectaculares promociones propias de Bci.</p>
+                        <h4>Disfruta de todos tus beneficios en cualquiera de nuestros 4 sitios</h4>
+                    </div>
+                    <div class="balls">
                         <div class="row-fluid">
-                           <div class="span4">
-                              <img class="monos-home" src="https://bci.modyocdn.com/uploads/21eaba7c-aed3-4695-ac42-f4fd7e456bc6/original/monos-cover.png">
-                           </div>
-                           <div class="span8">
-                              <div class="caption">
-                                 <h2 class="hidde-tablet">Vivir con Beneficios</h2>
-                                 <p>Pagando con las Tarjetas de Crédito Bci, accede en forma inmediata a descuentos en más de 1000 comercios a lo largo de todo Chile, increíbles programas de fidelización, diversos destinos en Chile y el mundo, y espectaculares promociones propias de Bci.</p>
-                                 <h4>Disfruta de todos tus beneficios en cualquiera de nuestros 4 sitios</h4>
-                              </div>
-                              <div class="balls">
-                                 <div class="row-fluid">
-                                    <div class="span3">
-                                       <a href="descuentos.html" onclick="ga('send', 'event', 'Boton','Click','Descuentos', 1, true);" target="_blank" class="circular-icon">
-                                          <img src="https://bci.modyocdn.com/uploads/62767974-541f-4e02-bc4d-ad15a3a85b93/original/descuentos.png">
-                                          <h5>Descuentos</h5>
-                                          <span>Visitar Sitio</span>
-                                       </a>
-                                    </div>
-                                    <div class="span3">
-                                       <a href="programas.html" onclick="ga('send', 'event', 'Boton','Click','Programas', 1, true);" target="_blank" class="circular-icon">
-                                          <img src="https://bci.modyocdn.com/uploads/569edc4d-67c3-4178-8317-8243178aa04c/original/programas.png">
-                                          <h5>Programas</h5>
-                                          <span>Visitar Sitio</span>
-                                       </a>
-                                    </div>
-                                    <div class="span3">
-                                       <a href="viajes.html"  onclick="ga('send', 'event', 'Boton','Click','Viajes', 1, true);" target="_blank" class="circular-icon">
-                                          <img src="https://bci.modyocdn.com/uploads/bfd0a7b7-0c01-430d-ae9b-78417aab9ec3/original/viajes.png">
-                                          <h5>Viajes</h5>
-                                          <span>Visitar Sitio</span>
-                                       </a>
-                                    </div>
-                                    <div class="span3">
-                                       <a href="promociones.html" target="_blank" onclick="ga('send', 'event', 'Boton','Click','Promociones', 1, true);" target="_blank" class="circular-icon">
-                                          <img src="https://bci.modyocdn.com/uploads/d748d921-727f-4d22-9873-4f094f9715e2/original/promociones.png">
-                                          <h5>Promociones</h5>
-                                          <span>Visitar Sitio</span>
-                                       </a>
-                                    </div>
-                                 </div>
-                              </div>
-                           </div>
+                        <div class="span3">
+                            <a href="{% url 'beneficios' %}" onclick="ga('send', 'event', 'Boton','Click','Descuentos', 1, true);"  class="circular-icon">
+                                <img src="https://bci.modyocdn.com/uploads/62767974-541f-4e02-bc4d-ad15a3a85b93/original/descuentos.png">
+                                <h5>Descuentos</h5>
+                                <span>Visitar Sitio</span>
+                            </a>
                         </div>
-                     </div>
-                  </div>
-                  <!-- end featured --> 
-                  <div id="descuentos-promo">
-                     <div class="container">
-                        <div class="title">
-                           <h2>Últimos Descuentos</h2>
+                        <div class="span3">
+                            <a href="programas.html" onclick="ga('send', 'event', 'Boton','Click','Programas', 1, true);" target="_blank" class="circular-icon">
+                                <img src="https://bci.modyocdn.com/uploads/569edc4d-67c3-4178-8317-8243178aa04c/original/programas.png">
+                                <h5>Programas</h5>
+                                <span>Visitar Sitio</span>
+                            </a>
                         </div>
-                        <ul class="columns columns-flex">
-                           <li ng-repeat="i in descuentos | limitTo:4">
-                           </li>
-                        </ul>
-                        <div class="call-action">
-                           <a href="descuentos.html" onclick="ga('send', 'event', 'Boton','Click','VerTodosLosDescuentos', 1, true);" target="_blank" class="btn btn-blue">Ver todos los descuentos</a>
+                        <div class="span3">
+                            <a href="viajes.html"  onclick="ga('send', 'event', 'Boton','Click','Viajes', 1, true);" target="_blank" class="circular-icon">
+                                <img src="https://bci.modyocdn.com/uploads/bfd0a7b7-0c01-430d-ae9b-78417aab9ec3/original/viajes.png">
+                                <h5>Viajes</h5>
+                                <span>Visitar Sitio</span>
+                            </a>
                         </div>
-                     </div>
-                  </div>
-                  <!-- end descuentos -->
-                  <div id="puntos-promo">
-                     <div class="container">
-                        <div class="title">
-                           <h2>Programas</h2>
+                        <div class="span3">
+                            <a href="promociones.html" target="_blank" onclick="ga('send', 'event', 'Boton','Click','Promociones', 1, true);" target="_blank" class="circular-icon">
+                                <img src="https://bci.modyocdn.com/uploads/d748d921-727f-4d22-9873-4f094f9715e2/original/promociones.png">
+                                <h5>Promociones</h5>
+                                <span>Visitar Sitio</span>
+                            </a>
                         </div>
-                        <ul class="columns columns-4 programas">
-                           <li>
-                              <a href="puntos.html">
-                                 <div class="circular-cover-image">
-                                    <img src="https://bci.modyocdn.com/uploads/31ab1d13-414f-4200-a25d-3c57c0316744/original/puntos-bci.jpg" alt="Puntos Bci">
-                                 </div>
-                                 <h4>PuntosBci</h4>
-                                 <p>Todas tus compras acumulan Puntos, que podrás canjear por productos, Gift Cards, Panoramas y ViajesBci.</p>
-                              </a>
-                           </li>
-                           <li>
-                              <a href="programas/opensky.html">
-                                 <div class="circular-cover-image">
-                                    <img src="https://bci.modyocdn.com/uploads/d2b550cb-d6b2-4789-a5fb-b864d1f32483/original/bci-open-sky-2.jpg" alt="OpenSky">
-                                 </div>
-                                 <h4>OpenSky</h4>
-                                 <p>Planifica tus viajes sin importar dónde o cuándo viajes, porque con OpenSky tienes toda la flexibilidad que necesitas.</p>
-                              </a>
-                           </li>
-                           <li>
-                              <a href="https://www.bci.cl/aadvantage">
-                                 <div class="circular-cover-image">
-                                    <img src="https://bci.modyocdn.com/uploads/276bc75d-0c91-41f0-b90c-ac1a15e80289/original/aadvantage.jpg" alt="Bci AAdvantage">
-                                 </div>
-                                 <h4>Bci / AAdvantage®</h4>
-                                 <p>Canjea millas por tickets en American Airlines y en más de 20 aerolíneas en el mundo, incluidas las miembros de oneworld®.</p>
-                              </a>
-                           </li>
-                           <li>
-                              <a href="programas/yo-neutralizo">
-                                 <div class="circular-cover-image">
-                                    <img src="https://bci.modyocdn.com/uploads/904cfa68-bc17-4e52-992a-7c44ab58d352/original/neutralizo-bci.jpg" alt="Yo Neutralizo">
-                                 </div>
-                                 <h4>Yo Neutralizo</h4>
-                                 <p>El primer y único programa que permite neutralizar las emisiones de CO2 que producen el cambio climático.</p>
-                              </a>
-                           </li>
-                        </ul>
-                        <!--<ul class="columns columns-flex">
-                           <li ng-repeat="i in puntos_vcb | limitTo:4">
-                               <a href="{/{ i.url }/}" target="_blank">
-                                   <div class="cover">
-                                       <img src="{/{ i.covers[0].replace('original','C800x500') }/}">
-                                   </div>
-                                   <div class="caption">
-                                       <h3>{/{ i.title }/}</h3>
-                                       <small><img src="https://bci.modyocdn.com/uploads/db923d11-e625-4374-ad1a-3cda39fc7f1d/original/puntos-ico.png"> {/{ i.price.replace('.0','') }/}</small>
-                                   </div>
-                               </a>
-                           </li>
-                           </ul>-->
-                        <div class="call-action">
-                           <a href="programas.html" onclick="ga('send', 'event', 'Boton','Click','VerTodosLosPuntos', 1, true);" target="_blank" class="btn btn-green">Ver todos los programas</a>
                         </div>
-                     </div>
-                  </div>
-                  <!-- end puntos -->
-                  <div id="viajes-promo">
-                     <div class="container">
-                        <div class="title">
-                           <h2>Viajes Destacados</h2>
-                        </div>
-                        <ul class="columns columns-flex">
-                           <li ng-repeat="i in viajes_vcb | limitTo:4">
-                              <a ng-href="{/{ i.url }/}" target="_blank">
-                                 <div class="cover">
-                                    <img ng-src="{/{ i.covers[0].replace('original','C800x500') }/}">
-                                 </div>
-                                 <div class="caption">
-                                    <h3>{/{ i.title }/}</h3>
-                                    <small class="textoReplace" ng-hide="i.category == 'caribe-y-centroamerica' || i.category == 'norteamerica' || i.category == 'sudamerica' || i.category == 'sudeste-asiatico'" replace>{/{ i.category | capitalize }/}</small>
-                                    <small ng-if="i.category == empty">Cruceros</small>
-                                    <small ng-show="i.category == 'caribe-y-centroamerica'">Caribe y Centroamérica</small>
-                                    <small ng-show="i.category == 'norteamerica'">Norteamérica</small>
-                                    <small ng-show="i.category == 'sudamerica'">Sudamérica</small>
-                                    <small ng-show="i.category == 'sudeste-asiatico'">Sudeste Asiático</small>
-                                 </div>
-                              </a>
-                           </li>
-                        </ul>
-                        <div class="call-action">
-                           <a href="viajes.html" onclick="ga('send', 'event', 'Boton','Click','VerTodosLosViajes', 1, true);"target="_blank" class="btn btn-blank">Ver todos los viajes</a>
-                        </div>
-                     </div>
-                  </div>
-                  <!-- end viajes -->    
-                  <div id="promo-promo">
-                     <div class="container">
-                        <div class="title">
-                           <h2>Promociones Bci</h2>
-                        </div>
-                        <ul class="columns columns-flex">
-                           <li ng-repeat="i in promos_vcb | limitTo:4">
-                           </li>
-                        </ul>
-                        <div class="call-action">
-                           <a href="promociones.html" onclick="ga('send', 'event', 'Boton','Click','VerTodasLasPromociones', 1, true);" target="_blank" class="btn btn-green">Ver todas las Promociones</a>
-                        </div>
-                     </div>
-                  </div>
-                  <!-- end promo -->
-               </div>
+                    </div>
+                </div>
             </div>
-            <link href="https://bci.modyocdn.com/uploads/6d62e216-9795-45c4-8132-1570ce63bef4/original/font-awesome.css" rel="stylesheet" type="text/css">
-            <script type="text/javascript">
-               $(document).ready(function(){
-                   $.ajax({
-                       url: "https://www.bci.cl/corporacion/posts.json?category=footer&limit=1",
-                       dataType: 'jsonp',
-                       cache: true,
-                       success: function(data){
-                       var html = '';
-                       $.each(data.posts, function(i, v){
-                           html += '' + v.description + '';
-                       });
-                           $('#cont_footer').html(html);
-                       },
-                           error: function(){
-                           $('#cont_footer').html('Fracaso'); 
-                       }
-                   })   
-               });
-            </script>
-            <div id="cont_footer"></div>
-            <script src="https://bci.modyocdn.com/uploads/01052293-b099-4e16-b845-cedf2814172f/original/jquery_sidr_min.js"></script>
-            <script src="https://bci.modyocdn.com/uploads/bf50dad4-bead-4073-a4a9-521068a078fe/original/jquery-scrolltofixed-min.js"></script>
-            <script src="https://bci.modyocdn.com/uploads/4ea64c58-9c9c-4825-bea8-9fba50c1190f/original/bootstrap-tabcollapse.js"></script> 
-            <script>
-               function clases() {
-                   $.sidr('open', 'sidr');
-                   $("#sidr").toggleClass('active');
-               
-                   if ($("#sidr").hasClass( 'active' )) {
-                       $("#top-nav").addClass('active');
-                       $("#menu").addClass('active');
-                   }
-                   else {
-                       $("#top-nav").removeClass('active');
-                       $("#menu").removeClass('active');
-                       $("#sidr-left").removeClass('active');
-                   }
-               }
-               
-               $(document).ready(function(){
-               $(".off-screen-nav-button").sidr({
-                   name: "sidr",
-                   onOpen: function() {
-                       $("body").addClass("openMenu");
-                   },
-                   onClose: function() {
-                       $("body").removeClass("openMenu");
-                   }
-               }); 
-               }); 
-            </script>
-         </body>
-      </html>
+            </div>
+        </div>
+        <!-- end featured --> 
+        <div id="descuentos-promo">
+            <div class="container">
+            <div class="title">
+                <h2>Últimos Descuentos</h2>
+            </div>
+            <ul class="columns columns-flex">
+                <li ng-repeat="i in descuentos | limitTo:4">
+                </li>
+            </ul>
+            <div class="call-action">
+                <a href="{% url 'beneficios' %}" onclick="ga('send', 'event', 'Boton','Click','VerTodosLosDescuentos', 1, true);"  class="btn btn-blue">Ver todos los descuentos</a>
+            </div>
+            </div>
+        </div>
+        <!-- end descuentos -->
+        <div id="puntos-promo">
+            <div class="container">
+            <div class="title">
+                <h2>Programas</h2>
+            </div>
+            <ul class="columns columns-4 programas">
+                <li>
+                    <a href="puntos.html">
+                        <div class="circular-cover-image">
+                        <img src="https://bci.modyocdn.com/uploads/31ab1d13-414f-4200-a25d-3c57c0316744/original/puntos-bci.jpg" alt="Puntos Bci">
+                        </div>
+                        <h4>PuntosBci</h4>
+                        <p>Todas tus compras acumulan Puntos, que podrás canjear por productos, Gift Cards, Panoramas y ViajesBci.</p>
+                    </a>
+                </li>
+                <li>
+                    <a href="programas/opensky.html">
+                        <div class="circular-cover-image">
+                        <img src="https://bci.modyocdn.com/uploads/d2b550cb-d6b2-4789-a5fb-b864d1f32483/original/bci-open-sky-2.jpg" alt="OpenSky">
+                        </div>
+                        <h4>OpenSky</h4>
+                        <p>Planifica tus viajes sin importar dónde o cuándo viajes, porque con OpenSky tienes toda la flexibilidad que necesitas.</p>
+                    </a>
+                </li>
+                <li>
+                    <a href="https://www.bci.cl/aadvantage">
+                        <div class="circular-cover-image">
+                        <img src="https://bci.modyocdn.com/uploads/276bc75d-0c91-41f0-b90c-ac1a15e80289/original/aadvantage.jpg" alt="Bci AAdvantage">
+                        </div>
+                        <h4>Bci / AAdvantage®</h4>
+                        <p>Canjea millas por tickets en American Airlines y en más de 20 aerolíneas en el mundo, incluidas las miembros de oneworld®.</p>
+                    </a>
+                </li>
+                <li>
+                    <a href="programas/yo-neutralizo">
+                        <div class="circular-cover-image">
+                        <img src="https://bci.modyocdn.com/uploads/904cfa68-bc17-4e52-992a-7c44ab58d352/original/neutralizo-bci.jpg" alt="Yo Neutralizo">
+                        </div>
+                        <h4>Yo Neutralizo</h4>
+                        <p>El primer y único programa que permite neutralizar las emisiones de CO2 que producen el cambio climático.</p>
+                    </a>
+                </li>
+            </ul>
+            <div class="call-action">
+                <a href="programas.html" onclick="ga('send', 'event', 'Boton','Click','VerTodosLosPuntos', 1, true);" target="_blank" class="btn btn-green">Ver todos los programas</a>
+            </div>
+            </div>
+        </div>
+        <!-- end puntos -->
+        <div id="viajes-promo">
+            <div class="container">
+            <div class="title">
+                <h2>Viajes Destacados</h2>
+            </div>
+            <ul class="columns columns-flex">
+                <li ng-repeat="i in viajes_vcb | limitTo:4">
+                    <a ng-href="{/{ i.url }/}" target="_blank">
+                        <div class="cover">
+                        <img ng-src="{/{ i.covers[0].replace('original','C800x500') }/}">
+                        </div>
+                        <div class="caption">
+                        <h3>{/{ i.title }/}</h3>
+                        <small class="textoReplace" ng-hide="i.category == 'caribe-y-centroamerica' || i.category == 'norteamerica' || i.category == 'sudamerica' || i.category == 'sudeste-asiatico'" replace>{/{ i.category | capitalize }/}</small>
+                        <small ng-if="i.category == empty">Cruceros</small>
+                        <small ng-show="i.category == 'caribe-y-centroamerica'">Caribe y Centroamérica</small>
+                        <small ng-show="i.category == 'norteamerica'">Norteamérica</small>
+                        <small ng-show="i.category == 'sudamerica'">Sudamérica</small>
+                        <small ng-show="i.category == 'sudeste-asiatico'">Sudeste Asiático</small>
+                        </div>
+                    </a>
+                </li>
+            </ul>
+            <div class="call-action">
+                <a href="viajes.html" onclick="ga('send', 'event', 'Boton','Click','VerTodosLosViajes', 1, true);"target="_blank" class="btn btn-blank">Ver todos los viajes</a>
+            </div>
+            </div>
+        </div>
+        <!-- end viajes -->    
+        <div id="promo-promo">
+            <div class="container">
+            <div class="title">
+                <h2>Promociones Bci</h2>
+            </div>
+            <ul class="columns columns-flex">
+                <li ng-repeat="i in promos_vcb | limitTo:4">
+                </li>
+            </ul>
+            <div class="call-action">
+                <a href="promociones.html" onclick="ga('send', 'event', 'Boton','Click','VerTodasLasPromociones', 1, true);" target="_blank" class="btn btn-green">Ver todas las Promociones</a>
+            </div>
+            </div>
+        </div>
+        <!-- end promo -->
+    </div>
+</div>
+<link href="https://bci.modyocdn.com/uploads/6d62e216-9795-45c4-8132-1570ce63bef4/original/font-awesome.css" rel="stylesheet" type="text/css">
+<script type="text/javascript">
+    $(document).ready(function(){
+        $.ajax({
+            url: "https://www.bci.cl/corporacion/posts.json?category=footer&limit=1",
+            dataType: 'jsonp',
+            cache: true,
+            success: function(data){
+            var html = '';
+            $.each(data.posts, function(i, v){
+                html += '' + v.description + '';
+            });
+                $('#cont_footer').html(html);
+            },
+                error: function(){
+                $('#cont_footer').html('Fracaso'); 
+            }
+        })   
+    });
+</script>
+<div id="cont_footer"></div>
+<script src="https://bci.modyocdn.com/uploads/01052293-b099-4e16-b845-cedf2814172f/original/jquery_sidr_min.js"></script>
+<script src="https://bci.modyocdn.com/uploads/bf50dad4-bead-4073-a4a9-521068a078fe/original/jquery-scrolltofixed-min.js"></script>
+<script src="https://bci.modyocdn.com/uploads/4ea64c58-9c9c-4825-bea8-9fba50c1190f/original/bootstrap-tabcollapse.js"></script> 
+<script>
+    function clases() {
+        $.sidr('open', 'sidr');
+        $("#sidr").toggleClass('active');
+    
+        if ($("#sidr").hasClass( 'active' )) {
+            $("#top-nav").addClass('active');
+            $("#menu").addClass('active');
+        }
+        else {
+            $("#top-nav").removeClass('active');
+            $("#menu").removeClass('active');
+            $("#sidr-left").removeClass('active');
+        }
+    }
+    
+    $(document).ready(function(){
+    $(".off-screen-nav-button").sidr({
+        name: "sidr",
+        onOpen: function() {
+            $("body").addClass("openMenu");
+        },
+        onClose: function() {
+            $("body").removeClass("openMenu");
+        }
+    }); 
+    }); 
+</script>
+</body>
+</html>
