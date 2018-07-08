@@ -17,6 +17,7 @@ from django.contrib import admin
 from django.urls import path, include
 from django.urls import path
 from front import views as front_views
+from graph.views import qr_generate
 from django.conf.urls import url, include
 from django.conf import settings
 from django.views.static import serve 
@@ -24,7 +25,7 @@ from django.views.static import serve
 urlpatterns = [
     path('admin/', admin.site.urls),
     path('', front_views.index),
-    path('generate_qr/', front_views.index, name="generate_qr"),
+    path('generate_qr/', qr_generate, name="generate_qr"),
     path('', include('notifications.urls')),
     
 ]

@@ -11,7 +11,7 @@
 {% endblock costumcss %}
 
 {% block main %}
-<form action="{% url 'generate_qr' %}" method="post">
+<form action="{% url 'generate_qr' %}" method="POST">
     {% csrf_token %}
     <h5>formulario rancio</h5>
     <input type="text" name="name" placeholder="Nombre y apellido" id="nombre_apellido">
