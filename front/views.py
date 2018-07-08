@@ -46,4 +46,4 @@ def descuento_single(request):
 
 def dashboard(request):
 
-    return render(request, '')
+    return render(request, 'dashboard.html')
