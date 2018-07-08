@@ -45,6 +45,7 @@ def descuento_single(request):
     return render(request, 'descuento_single.html')
 
 
+<<<<<<< HEAD
 def exectutive(request):
     return render(request,'executive.html')
 
@@ -63,3 +64,8 @@ def result_positive(request):
 
 def result_negative(request):
     return render(request,'result-negative.html')
+=======
+def dashboard(request):
+
+    return render(request, '')
+>>>>>>> 1ad9d596050f4e5aaa2acb88b3afd5aa1bd3f10b
