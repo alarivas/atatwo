@@ -14,6 +14,7 @@ def beneficios(request):
 
 
 def producto(request, producto):
+    is_hidden = True
     if request.method == 'POST':
         user_benefit = request.POST.get("rut") #rut
         user_rut = rut_transform(settings.USER_RUT)
@@ -23,8 +24,8 @@ def producto(request, producto):
         qr_name = "media/qr/" + user_rut + producto + ".png"
         qr.save(qr_name)
         add_relation_graph(request)
-        return HttpResponse('QR generado')
-    return render(request, 'producto.html')
+        is_hidden = False
+    return render(request, 'producto.html', {'is_hidden': is_hidden})
 
 
 def send_email(request, producto):
