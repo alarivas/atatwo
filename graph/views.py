@@ -6,6 +6,8 @@ from .models import Person, Relation
 from notifications.views import email_generator
 # Create your views here.
 
+USER_RUT = '18808706-k'
+USER_NAME = 'Cele Alarcón'
 
 def rut_transform(_rut):
 
@@ -67,20 +69,31 @@ def qr_generate(request):
         benefit = request.POST.get("benefit") #beneficio
         user_benefit = request.POST.get("rut") #rut
         user_name = request.POST.get("name")
-        user_rut = rut_transform('18808706-k')
+        user_rut = rut_transform(USER_RUT)
         benefit_rut = rut_transform(user_benefit)
         to_qr = encrypt(user_rut, benefit_rut, benefit)
         qr = qrcode.make(to_qr)
         qr_name = "media/qr/" + user_rut + benefit + ".png"
         qr.save(qr_name)
-        add_relation_graph()
+        add_relation_graph(request)
         email_generator(qr_name)
         return HttpResponse('QR generado')
     return HttpResponse('QR no generado')
 
 
 def add_relation_graph(request):
-    pass
+    if Relation.objects.filter(person_one__rut=USER_RUT, person_two__rut=request.POST.get('rut')).exists():
+        r = Relation.objects.filter(person_one__rut=USER_RUT, person_two__rut=request.POST.get('rut'))[0]
+        r.count += 1
+        r.save()
+    elif Relation.objects.filter(person_one__rut=request.POST.get('rut'), person_two__rut=USER_RUT).exists():
+        r = Relation.objects.filter(person_one__rut=request.POST.get('rut'), person_two__rut=USER_RUT)[0]
+        r.count += 1
+        r.save()
+    else:
+        p1, created = Person.objects.get_or_create(name=USER_NAME, rut=USER_RUT)
+        p2, created = Person.objects.get_or_create(name=request.POST.get('name'), rut=request.POST.get('rut'))
+        Relation.objects.create(person_one=p1, person_two=p2)
 
 
 def send_qr(request):

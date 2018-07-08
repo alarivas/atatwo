@@ -3,15 +3,14 @@ from django.db import models
 
 class Person(models.Model):
     rut = models.CharField(max_length=100, primary_key=True)
-    first_name = models.CharField(max_length=100)
-    last_name = models.CharField(max_length=100)
+    name = models.CharField(max_length=100)
 
     def __str__(self):
-        return '{} {}'.format(self.first_name, self.last_name)
+        return '{}'.format(self.name)
 
 
 class Relation(models.Model):
-    count = models.IntegerField()
+    count = models.IntegerField(default=0)
     person_one = models.OneToOneField(Person, on_delete=models.CASCADE, related_name='person_one')
     person_two = models.OneToOneField(Person, on_delete=models.CASCADE, related_name='person_two')
 
